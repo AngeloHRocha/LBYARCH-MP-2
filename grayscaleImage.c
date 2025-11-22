@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+extern void imgCvtGrayDoubleToInt(double *input, int *output, int matrixSize);
+
 int main(){
     int height, width;
 
@@ -19,22 +21,22 @@ int main(){
     }
 
     // Read matrix input
-    for (int i=0; i<matrixSize; i++){
+    int i, j;
+    for (i=0; i<matrixSize; i++){
         scanf("%lf", &input[i]);
     } 
 
-    // (function call to be inserted here)
+    imgCvtGrayDoubleToInt(input, output, matrixSize);
 
     // Print output 
-    for (int i=0; i<height; i++) {
-        for (int j= 0; j<width; j++) {
+    for (i=0; i<height; i++) {
+        for (j= 0; j<width; j++) {
             printf("%d", output[i*width + j]);
             if (j < width - 1)
                 printf(", ");
         }
         printf("\n");
     }
-
 
     return 0;
 }
