@@ -7,6 +7,7 @@ int main(){
     int height, width;
 
     // Read height and width
+    printf("Input: \n");
     scanf("%d %d", &height, &width);
 
     int matrixSize = height*width;
@@ -29,6 +30,7 @@ int main(){
     imgCvtGrayDoubleToInt(input, output, matrixSize);
 
     // Print output 
+    printf("\nOutput: \n");
     for (i=0; i<height; i++) {
         for (j= 0; j<width; j++) {
             printf("%d", output[i*width + j]);
