@@ -15,3 +15,7 @@ The screenshot below shows the input (height, width, double float pixel values) 
 <p align="center">
   <img src="screenshot.png" width="190">
 </p>
+
+## Demo video
+
+- Link to demo video: https://drive.google.com/drive/u/1/folders/1hHlPMTwuu-t9IU9ksxtcfOjlrfPc8pSx
