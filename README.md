@@ -18,4 +18,4 @@ The screenshot below shows the input (height, width, double float pixel values) 
 
 ## Demo video
 
-- Link to demo video: https://drive.google.com/drive/u/1/folders/1hHlPMTwuu-t9IU9ksxtcfOjlrfPc8pSx
+- Link to demo video: https://drive.google.com/file/d/1aDAMxxu1mFOs-sAGZuVpxKe3hTT_jG3e/view?usp=sharing
