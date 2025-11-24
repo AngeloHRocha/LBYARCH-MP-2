@@ -1,6 +1,6 @@
 ## Group Members
-Gonzales, Anja Gabrielle N.
-Rocha, Angelo H.
+- Gonzales, Anja Gabrielle N.
+- Rocha, Angelo H.
 
 ## Execution Time and Analysis Performance
 
