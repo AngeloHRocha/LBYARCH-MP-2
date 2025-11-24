@@ -1,3 +1,7 @@
+## Group Members
+Gonzales, Anja Gabrielle N.
+Rocha, Angelo H.
+
 ## Execution Time and Analysis Performance
 
 | Matrix Size | ASM Average Execution Time | C Average Execution Time |
