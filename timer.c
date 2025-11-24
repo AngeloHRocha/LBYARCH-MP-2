@@ -5,6 +5,12 @@
 
 extern void imgCvtGrayDoubleToInt(double *input, int *output, int matrixSize);
 
+void CimgCvtGrayDoubleToInt(double *input, int *output, int matrixSize){
+    int i;
+    for (i = 0; i < matrixSize; i++){
+        output[i] = (int)(input[i] * 255.0);
+    }
+}
 int main(){
     int height, width;
     int i, j;
@@ -37,6 +43,7 @@ int main(){
     int runs = 30;
     double totalTime = 0.0;
 
+    // Time ASM implementation
     for (i = 0; i < runs; i++){
         QueryPerformanceCounter(&start);
 
@@ -48,8 +55,23 @@ int main(){
         totalTime += elapsed;
     }
 
-    // Display average execution time
-    printf("Average execution time over %d runs: %.9f seconds\n", runs, totalTime / runs);
+    // Display average execution time for ASM
+    printf("ASM Average execution time over %d runs: %.9f seconds\n", runs, totalTime / runs);
+
+    // Time C implementation
+    for (i = 0; i < runs; i++){
+        QueryPerformanceCounter(&start);
+
+        CimgCvtGrayDoubleToInt(input, output, matrixSize);
+
+        QueryPerformanceCounter(&end);
+
+        double elapsed = (double)(end.QuadPart - start.QuadPart) / frequency.QuadPart;
+        totalTime += elapsed;
+    }
+
+    // Display average execution time for ASM
+    printf("C Average execution time over %d runs: %.9f seconds\n", runs, totalTime / runs);
 
     imgCvtGrayDoubleToInt(input, output, matrixSize);
 

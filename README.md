@@ -1,12 +1,12 @@
 ## Execution Time and Analysis Performance
 
-    | Matrix Size | Average Execution Time |
-    |-------------|------------------------|
-    |   10 x 10   |  0.000000107 seconds   |
-    |  100 x 100  |  0.000008747 seconds   |
-    | 1000 x 1000 |  0.000758517 seconds   |
+| Matrix Size | ASM Average Execution Time | C Average Execution Time |
+|-------------|----------------------------|--------------------------|
+|   10 x 10   |    0.000000177 seconds     |   0.000000527 seconds    |
+|  100 x 100  |    0.000012447 seconds     |   0.000031620 seconds    |
+| 1000 x 1000 |    0.001062010 seconds     |   0.003098443 seconds    |     
 
-**Analysis:** The results show that the assembly implementation is extremely fast for small matrices and scales efficiently for larger ones. By implementing the conversion function in x86-64 assembly, computation is highly optimized since scalar SIMD registers and floating-point instructions perform calculations directly in the CPU, eliminating the overhead of C loops and array accesses. This allows very fast processing even for large matrices, while C handles input/output and memory management, providing flexibility and ease of use.
+**Analysis:** The results show that the assembly implementation of the conversion function executes much faster as compared to the C implementation. For a matrix size of 10x10, the assembly implementation is around 2.98x faster. For a matrix size of 100x100, the assembly implementation is around 2.54x faster. For a matrix size of 1000x1000, the assembly implementation is around 2.92x faster. Given these results, we can observe that by implementing the conversion function in x86-64 assembly, computation is highly optimized since scalar SIMD registers and floating-point instructions perform calculations directly in the CPU. This eliminates the overhead of C loops and array accesses, of which is the reason why the C implementation executes much slower. In conclusion, the utilization of assembly functions within C allows very fast processing even for large matrices; on the other hand, purely using C slows down execution time, which can pose even more performance issues as matrix sizes get larger and larger.
 
 ## Correctness Check
 
