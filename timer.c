@@ -56,7 +56,20 @@ int main(){
     }
 
     // Display average execution time for ASM
-    printf("ASM Average execution time over %d runs: %.9f seconds\n", runs, totalTime / runs);
+    printf("ASM average execution time over %d runs: %.9f seconds\n", runs, totalTime / runs);
+
+    // Print first 5x5 of the output for verification
+    printf("ASM Correctness Check:\n");
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+            printf("%d", output[i * width + j]);
+            if (j < 4)
+                printf(", ");
+        }
+        printf("\n");
+    }
+
+    printf("\n");
 
     // Time C implementation
     for (i = 0; i < runs; i++){
@@ -71,11 +84,10 @@ int main(){
     }
 
     // Display average execution time for ASM
-    printf("C Average execution time over %d runs: %.9f seconds\n", runs, totalTime / runs);
-
-    imgCvtGrayDoubleToInt(input, output, matrixSize);
+    printf("C average execution time over %d runs: %.9f seconds\n", runs, totalTime / runs);
 
     // Print first 5x5 of the output for verification
+    printf("C Correctness Check:\n");
     for (i = 0; i < 5; i++) {
         for (j = 0; j < 5; j++) {
             printf("%d", output[i * width + j]);
